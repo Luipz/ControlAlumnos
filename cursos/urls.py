@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     #url('', views.lista_peliculas, name ='lista_peliculas'),
-    url('curso/nueva/', views.curso_nueva, name='curso_nueva'),
+    url('cursos/nueva/', views.curso_nueva, name='curso_nueva'),
     ]
