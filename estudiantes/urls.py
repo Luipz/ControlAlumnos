@@ -18,7 +18,7 @@ from django.urls import path, include
 from django.conf.urls import url
 
 
-#urlpatterns = [
-#    path('admin/', admin.site.urls),
-#    url('', include('curso.urls')),
-#]
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    url('', include('curso.urls')),
+]

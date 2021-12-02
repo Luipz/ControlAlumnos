@@ -15,15 +15,14 @@ class Alumno(models.Model):
 class Curso(models.Model):
     nombre = models.CharField(max_length=60)
     catedratico = models.CharField(max_length=40)
-    
     alumnos = models.ManyToManyField(Alumno, through='Asignacion')
 
     def __str__(self):
         return self.nombre, self.catedratico
 
 class Asignacion (models.Model):
-    seccion = models.ForeignKey(Alumno, on_delete=models.CASCADE)
-    semestre = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
 
 class AsignacionInLine(admin.TabularInline):
     model = Asignacion
