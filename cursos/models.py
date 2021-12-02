@@ -10,7 +10,7 @@ class Alumno(models.Model):
     fecha_nacimiento = models.DateField()
 
     def __str__(self):
-        return self.nombres, self.apellidos, self.edad, self.genero
+        return self.nombres+' '+self.apellidos+' '+self.edad+' '+self.genero
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=60)
@@ -18,7 +18,7 @@ class Curso(models.Model):
     alumnos = models.ManyToManyField(Alumno, through='Asignacion')
 
     def __str__(self):
-        return self.nombre, self.catedratico
+        return self.nombre+' '+self.catedratico
 
 class Asignacion (models.Model):
     alumno = models.ForeignKey(Alumno, on_delete=models.CASCADE)
